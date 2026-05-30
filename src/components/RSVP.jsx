@@ -2,10 +2,10 @@ import { useState } from 'react'
 
 // TODO: Replace these with your actual Google Form details (See Walkthrough for instructions)
 const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdzfnC_fuoHZUUXfh2TBX3TGDdSHrqndgZcEtns9gC8xqTIew/formResponse?usp=publish-editor"
-const ENTRY_ID_NAME = "entry.1234567890"        // Guest Name entry ID
-const ENTRY_ID_ATTENDING = "entry.2345678901"   // Attending status entry ID
-const ENTRY_ID_GUESTS = "entry.3456789012"      // Guest Count entry ID
-const ENTRY_ID_MESSAGE = "entry.4567890123"     // Message entry ID
+const ENTRY_ID_NAME = "entry.1963231352"        // Guest Name entry ID
+const ENTRY_ID_ATTENDING = "entry.216223904"   // Attending status entry ID
+const ENTRY_ID_GUESTS = "entry.1787361715"      // Guest Count entry ID
+const ENTRY_ID_MESSAGE = "entry.261169458"     // Message entry ID
 
 export default function RSVP({ guestName }) {
   const [attending, setAttending] = useState(null)
@@ -77,8 +77,8 @@ export default function RSVP({ guestName }) {
                   type="button"
                   onClick={() => setAttending(true)}
                   className={`flex-1 py-4 px-6 rounded-full border-2 transition-all font-sans tracking-wide font-semibold ${attending === true
-                      ? 'bg-primary border-primary text-white shadow-lg scale-105'
-                      : 'border-gray-200 text-gray-500 hover:border-primary/50'
+                    ? 'bg-primary border-primary text-white shadow-lg scale-105'
+                    : 'border-gray-200 text-gray-500 hover:border-primary/50'
                     }`}
                 >
                   JOYFULLY ACCEPT
@@ -87,8 +87,8 @@ export default function RSVP({ guestName }) {
                   type="button"
                   onClick={() => setAttending(false)}
                   className={`flex-1 py-4 px-6 rounded-full border-2 transition-all font-sans tracking-wide font-semibold ${attending === false
-                      ? 'bg-secondary border-secondary text-white shadow-lg scale-105'
-                      : 'border-gray-200 text-gray-500 hover:border-secondary/50'
+                    ? 'bg-secondary border-secondary text-white shadow-lg scale-105'
+                    : 'border-gray-200 text-gray-500 hover:border-secondary/50'
                     }`}
                 >
                   REGRETFULLY DECLINE
