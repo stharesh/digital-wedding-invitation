@@ -23,7 +23,7 @@ export default function RSVP({ guestName }) {
     // Prepare form data using URLSearchParams for application/x-www-form-urlencoded
     const formData = new URLSearchParams()
     formData.append(ENTRY_ID_NAME, guestName || 'Anonymous')
-    formData.append(ENTRY_ID_ATTENDING, attending ? "Yes, I will be there" : "No, I won't be able to attend")
+    formData.append(ENTRY_ID_ATTENDING, attending ? "Yes" : "No")
 
     // Only send guest count if attending
     if (attending) {
