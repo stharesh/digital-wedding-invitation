@@ -42,7 +42,7 @@ export default function Hero({ guestName }) {
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url('/Assets/Couple_image.png')` }}
       >
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
       </div>
 
       {/* CSS Petals */}
@@ -74,8 +74,8 @@ export default function Hero({ guestName }) {
         <p className="font-sans text-sm md:text-lg tracking-widest mb-4 uppercase">
           {guestName ? `${guestName}, Welcome to the Wedding of` : 'Welcome to the Wedding of'}
         </p>
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary drop-shadow-md mb-8">
-          Rohan & Meera
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-[#fce3b6] drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] mb-8">
+          Peter & Pallavi
         </h1>
         
         {/* Countdown */}
