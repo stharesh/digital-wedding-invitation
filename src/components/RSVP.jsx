@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // TODO: Replace these with your actual Google Form details (See Walkthrough for instructions)
-const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdzfnC_fuoHZUUXfh2TBX3TGDdSHrqndgZcEtns9gC8xqTIew/formResponse?usp=publish-editor"
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdzfnC_fuoHZUUXfh2TBX3TGDdSHrqndgZcEtns9gC8xqTIew/formResponse"
 const ENTRY_ID_NAME = "entry.1963231352"        // Guest Name entry ID
 const ENTRY_ID_ATTENDING = "entry.216223904"   // Attending status entry ID
 const ENTRY_ID_GUESTS = "entry.1787361715"      // Guest Count entry ID
@@ -20,14 +20,14 @@ export default function RSVP({ guestName }) {
 
     setIsSubmitting(true)
 
-    // Prepare form data
-    const formData = new FormData()
+    // Prepare form data using URLSearchParams for application/x-www-form-urlencoded
+    const formData = new URLSearchParams()
     formData.append(ENTRY_ID_NAME, guestName || 'Anonymous')
     formData.append(ENTRY_ID_ATTENDING, attending ? "Yes, I will be there" : "No, I won't be able to attend")
 
     // Only send guest count if attending
     if (attending) {
-      formData.append(ENTRY_ID_GUESTS, guests)
+      formData.append(ENTRY_ID_GUESTS, guests.toString())
     } else {
       formData.append(ENTRY_ID_GUESTS, "0")
     }
@@ -41,7 +41,10 @@ export default function RSVP({ guestName }) {
       await fetch(GOOGLE_FORM_ACTION_URL, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: formData.toString()
       })
       // Since mode is no-cors, we won't be able to see the response.
       // We'll assume success if no error was thrown.
