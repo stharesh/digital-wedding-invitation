@@ -1,7 +1,9 @@
 {
-  "name": "temp-app",
+  "name": "digital-wedding-invitation",
   "private": true,
   "version": "0.0.0",
+  "description": "Personalized, animated digital wedding invitation with event details, venue media, and RSVP collection.",
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "dev": "vite",
